@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="js.multiselect.js"></script>
+
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="fa/css/all.min.css" rel="stylesheet">
+    <link href="js.multiselect.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="multi-select" id="multi-select">
+                    <div class="multi-select-item-container"></div>
+                    <div class="multi-select-choice-container">
+                        <ul class="multi-select-choice-list">
+                            <li id="u1">
+                                <div class="d-inline-flex justify-content-start align-items-center multi-select-choice"
+                                    id="u1" data-href="add" data-uid="u1" data-text="Add User">Add User</div>
+                            </li>
+                            <li id="u2">
+                                <div class="d-inline-flex justify-content-start align-items-center multi-select-choice"
+                                    id="u2" data-href="edit" data-uid="u2" data-text="Edit User">Edit User</div>
+                            </li>
+                            <li id="u3">
+                                <div class="d-inline-flex justify-content-start align-items-center multi-select-choice"
+                                    id="u3" data-href="delete" data-uid="u3" data-text="Delete User">Delete User</div>
+                            </li>
+                            </li>
+                        </ul>
+                    </div>
+                    <input class="multi-select-items-json" type="text" value="" style="width: 100%">
+                    <input class="btn btn-primary" type="reset" value="Reset">
+                    <input class="btn btn-primary" type="button" value="Load" id="load">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+
+        var sel = $('#multi-select').multiSelect({
+            'attrs': 'uid, href, text'
+        });
+        
+        $('input[type="reset"]').click(function (e) {
+            sel.clearItemContainer();
+        });
+
+        $('input#load').click(function (e) {
+            sel.initialiseItems();
+        });
+
+    });
+
+</script>

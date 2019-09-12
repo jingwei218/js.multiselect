@@ -1,0 +1,35 @@
+div.multi-select-item-container {
+    min-height: 2rem;
+    background-color: #eee;
+}
+
+div.multi-select-item {
+    border-radius: 0.5rem;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 5px 5px;
+    color: white;
+    background-color: rgb(68, 132, 199);
+}
+
+div.multi-select-item>i {
+    cursor: pointer;
+}
+
+ul.multi-select-choice-list {
+    padding: 0;
+}
+
+ul.multi-select-choice-list > li {
+    list-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+ul.multi-select-choice-list > li:hover {
+    background-color: darkslategray;
+    color: white;
+}
